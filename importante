@@ -1,0 +1,4 @@
+ ng lint --fix
+
+ ng test
+ ng test --cc

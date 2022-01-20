@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  marcas: string[] = ['nike', 'adidas', 'rebook'];
+  message: string = 'initial message';
+  name = 'Angular ' + VERSION.full;
+
+  search(term?:string): string[]{
+   if (!term) return this.marcas;
+   return this.marcas.filter(marca => marca.indexOf(term) > -1);
+  }
+
+  onChangeMessage(): void{
+    this.message = 'second message';
+  }
 }
